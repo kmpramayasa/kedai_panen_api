@@ -1,0 +1,18 @@
+{
+  "orders": [
+    {
+      "products_name": "Sawi",
+      "weight": 7,
+      "unit": "Kilogram",
+      "image": "sawi.jpg",
+      "category": "Sayur",
+      "price": 90000,
+      "qty": 2,
+      "total": 180000,
+      "address": "Jalan Kebo Iwa Utara III A",
+      "note": "Tidak pakai sambal",
+      "date": "24 06 2021",
+      "id": 1
+    }
+  ]
+}
