@@ -42,13 +42,13 @@ class Order {
 
     final int id;
     final String productsName;
-    final int weight;
+    final String weight;
     final String unit;
     final String image;
     final String category;
-    final int price;
-    final int qty;
-    final int total;
+    final String price;
+    final String qty;
+    final String total;
     final String address;
     final String note;
     final String date;

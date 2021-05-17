@@ -1,0 +1,60 @@
+{
+  "orders": [
+    {
+      "products_name": "Sawi",
+      "weight": 7,
+      "unit": "Kilogram",
+      "image": "sawi.jpg",
+      "category": "Sayur",
+      "price": 90000,
+      "qty": 2,
+      "total": 180000,
+      "address": "Jalan Kebo Iwa Utara III A",
+      "note": "Tidak pakai sambal",
+      "date": "24 06 2021",
+      "id": 1
+    },
+    {
+      "products_name": "Kangkung",
+      "weight": 7,
+      "unit": "Kilogram",
+      "image": "kangkung.jpg",
+      "category": "Sayur",
+      "price": 90000,
+      "qty": 2,
+      "total": 180000,
+      "address": "Jalan Kebo Iwa Utara III A",
+      "note": "Tidak pakai sambal",
+      "date": "24 06 2021",
+      "id": 2
+    },
+    {
+      "products_name": "Bayam",
+      "weight": 7,
+      "unit": "Kilogram",
+      "image": "bayam.jpg",
+      "category": "Sayur",
+      "price": 90000,
+      "qty": 2,
+      "total": 180000,
+      "address": "Jalan Kebo Iwa Utara III A",
+      "note": "Tidak pakai sambal",
+      "date": "24 06 2021",
+      "id": 3
+    },
+    {
+      "products_name": "Mangga",
+      "weight": 8,
+      "unit": "Kilogram",
+      "image": "mangga.png",
+      "category": "Buah",
+      "price": 90000,
+      "qty": 2,
+      "total": 180000,
+      "address": "Jalan Kebo Iwa Utara III A",
+      "note": "Tidak pakai sambal",
+      "date": "24 06 2021",
+      "id": 4
+    }
+  ]
+}

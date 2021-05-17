@@ -1,18 +1,60 @@
 {
   "orders": [
     {
-      "products_name": "Sawi",
-      "weight": 7,
+      "products_name": "Bayam",
+      "weight": "7",
       "unit": "Kilogram",
-      "image": "sawi.jpg",
+      "image": "bayam.jpg",
       "category": "Sayur",
-      "price": 90000,
-      "qty": 2,
-      "total": 180000,
+      "price": "90000",
+      "qty": "3",
+      "total": "270000",
       "address": "Jalan Kebo Iwa Utara III A",
       "note": "Tidak pakai sambal",
-      "date": "24 06 2021",
-      "id": 1
+      "date": "17 05 2021",
+      "id": 3
+    },
+    {
+      "products_name": "Kubis",
+      "weight": "500",
+      "unit": "Gram",
+      "image": "kubis.jpg",
+      "category": "Sayur",
+      "price": "5000",
+      "qty": "3",
+      "total": "15000",
+      "address": "Jalan Suli No. 6",
+      "note": "Tidak Ada",
+      "date": "16 05 2021",
+      "id": 8
+    },
+    {
+      "products_name": "Kangkung",
+      "weight": "500",
+      "unit": "Gram",
+      "image": "kangkung.jpg",
+      "category": "Sayur",
+      "price": "10000",
+      "qty": "15",
+      "total": "150000",
+      "address": "Perumahan Tegal Sari A2",
+      "note": "Tidak pakai saos",
+      "date": "17 05 2021",
+      "id": 9
+    },
+    {
+      "products_name": "Jambu Air",
+      "weight": "1",
+      "unit": "Kilogram",
+      "image": "jambu-madu.jpg",
+      "category": "Buah",
+      "price": "23000",
+      "qty": "4",
+      "total": "92000",
+      "address": "Jalan Kebo Iwa Utara",
+      "note": "",
+      "date": "17 05 2021",
+      "id": 10
     }
   ]
 }

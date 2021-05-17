@@ -17,7 +17,8 @@ class TransactionScreen extends StatefulWidget {
 class _TransactionScreenState extends State<TransactionScreen> {
 
   Future<List<Order>> _orderList;
-  final DateFormat dateFormatter = DateFormat("dd MM yyyy");
+  final DateFormat dateFormatter = DateFormat("dd MM yyyy");  
+  bool _success = false;
 
   @override
   void initState() {
@@ -35,20 +36,21 @@ class _TransactionScreenState extends State<TransactionScreen> {
 
     ResponsePost response;
     response = await ApiService.deleteOrder(id);
-    Navigator.pop(context);
-    _updateOrderList();
+    // Navigator.pop(context);
+    // _updateOrderList();
 
-    Toast.show(response.message, context);
+    // Toast.show(response.message, context);
+    
+    _success = response.success;    
 
-    // bool _success = false;
-    // _success = response.success;
-
-    //   if(_success){
-        
-    //   } else {
-    //     Toast.show('Gagal Hapus Data Order', context);
-    //     _updateOrderList();
-    //   }    
+    if(_success) {      
+      Toast.show(response.message, context);
+      _updateOrderList();      
+    } else {
+      Toast.show(response.message, context);
+      _updateOrderList();
+    }
+//     
   }
 
   Widget _buildOrders(Order order, context){
@@ -88,7 +90,7 @@ class _TransactionScreenState extends State<TransactionScreen> {
                         ),
                         SizedBox(height: 6.0),
                         Text(
-                          order.weight.toString() + order.unit??'Berat Brang',
+                          order.weight.toString() + " " + order.unit ?? 'Berat Barang',
                           style: TextStyle(
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.w300,

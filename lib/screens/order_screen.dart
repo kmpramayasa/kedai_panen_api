@@ -57,34 +57,28 @@ class _OrderScreenState extends State<OrderScreen> {
 
 
       String productName = widget.productList.name;
-      int weight = widget.productList.weight;
+      String weight = widget.productList.weight.toString();
       String unit = widget.productList.unit;
       String image = widget.productList.image;
       String category = widget.productList.category;
-      int price = widget.productList.price;
-      int qty = _qty;
-      int total= _total;
+      String price = widget.productList.price.toString();
+      String qty = _qty.toString();
+      String total= _total.toString();
       String address = _address;
       String note = _notes;
       String date = DateFormat('dd MM yyyy').format(_date);
                  
-      response = await ApiService.checkoutOrder(productName, weight, unit, image, category, price, qty, total, address, note, date);
+      response = await ApiService.checkoutOrder(productName, weight, unit, image, category, price, qty, total, address, note, date);      
 
-      Navigator.pop(context);
-      setState(() {});
-      Toast.show(response.message, context);
+      _success = response.success;
 
-      // _success = response.success;
-
-      // if(_success) {
-      //   Navigator.pop(context);
-      //   setState(() {});
-      //   Toast.show(response.message, context);
-      // } else {
-      //   Toast.show('Gagal Buat Order', context);
-      // }
-
-      print("Date: " + date);
+      if(_success) {
+        Navigator.pop(context);
+        setState(() {});
+        Toast.show(response.message, context);
+      } else {
+        Toast.show(response.message, context);
+      }      
 
       print("Sukses Order");             
     }    

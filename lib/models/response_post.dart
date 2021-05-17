@@ -9,7 +9,7 @@ class ResponsePost{
     this.id
   }); 
 
-  factory ResponsePost.fromJson(Map<String, dynamic> json) =>
+  factory ResponsePost.createdPost(Map<String, dynamic> json) =>
     ResponsePost(
       success: json["success"],
       message: json["message"],

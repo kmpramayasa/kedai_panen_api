@@ -37,7 +37,7 @@ class _TransactionDetailScreenState extends State<TransactionDetailScreen> {
   // Get Total Order price
   _totalOrder(){    
     if(orderQty.text != null){
-      int price = widget.orders.price;
+      int price = int.tryParse(widget.orders.price) ?? 0;
       int qty = int.tryParse(orderQty.text) ?? 0;
 
       _total = price*qty;
@@ -55,38 +55,31 @@ class _TransactionDetailScreenState extends State<TransactionDetailScreen> {
 
 
       String productName = widget.orders.productsName;
-      int weight = widget.orders.weight;
+      String weight = widget.orders.weight;
       String unit = widget.orders.unit;
       String image = widget.orders.image;
       String category = widget.orders.category;
-      int price = widget.orders.price;
-      int qty = _qty;
-      int total= _total;
+      String price = widget.orders.price;
+      String qty = _qty.toString();
+      String total= _total.toString();
       String address = _address;
       String note = _notes;
       String date = DateFormat('dd MM yyyy').format(_date);  
                  
-      response = await ApiService.updateOrder(widget.orders.id, productName, weight, unit, image, category, price, qty, total, address, note, date);
+      response = await ApiService.updateOrder(widget.orders.id, productName, weight, unit, image, category, price, qty, total, address, note, date);     
 
-      setState(() {});
-      Toast.show(response.message, context);
-      Navigator.pop(context);
+      _success = response.success;
 
-      // _success = response.success;
+      if(_success) {
+        Navigator.pop(context);        
+        setState(() {});
+        Toast.show(response.message, context);
+      } else {
+        Toast.show(response.message, context);
+        Navigator.pop(context);
+      }      
 
-      // if(_success) {
-      //   setState(() {});
-      //   Toast.show(response.message, context);
-      //   Navigator.pop(context);
-      // } else {
-      //   Toast.show('Gagal Update Order', context);
-      // }
-
-      print("Date: " + date);
-
-      print("Sukses Update");       
-
-      Navigator.pop(context);
+      print("Sukses Update");             
     }    
   }
 
