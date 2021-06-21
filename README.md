@@ -6,7 +6,6 @@ NIM: 1915091014
 
 Kelas: SI 4B
 
-<br>
 
 ## Kedai Panen
 
