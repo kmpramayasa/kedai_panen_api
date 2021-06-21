@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "827937872052",
+    "project_id": "kedai-panen-api",
+    "storage_bucket": "kedai-panen-api.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827937872052:android:381098aed9f1ab96251fe1",
+        "android_client_info": {
+          "package_name": "com.example.layout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "827937872052-uov8q6sjhkpgr9hs00odo7kj3ihis4qt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUYYXxEGY1ZPagI56sJNuragGjLCa9Uwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "827937872052-uov8q6sjhkpgr9hs00odo7kj3ihis4qt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:layout/constants.dart';
+import 'package:layout/screens/login_screen.dart';
 import 'package:layout/screens/transaction_screen.dart';
 import 'package:layout/screens/wishlist_screen.dart';
+import 'package:layout/services/authentication_services.dart';
+import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -36,65 +40,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 36.0),
               child: Column(
-                children: <Widget>[
-                  
-                  Container(     
-                    margin: EdgeInsets.only(bottom: 12.0),         
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[                                          
-                        //Profile Info
-                        Container(
-                          margin: EdgeInsets.only(top: 12.0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-
-                              //Profile Photo
-                              CircleAvatar(
-                                backgroundImage: AssetImage('../../assets/profile.jpeg'),
-                                maxRadius: 25.0,
-                              ),
-                              SizedBox(width: 10,),
-                              Column(       
-                                crossAxisAlignment: CrossAxisAlignment.start,             
-                                children: <Widget>[
-                                  //Profile Name
-                                  Text(
-                                    "Komang Pramayasa",
-                                    style: TextStyle(
-                                      fontFamily: 'Roboto',
-                                      fontSize: 16,
-                                      color: Color(0xFF525252),
-                                    ),
-                                  ),
-                                  //ProfileButton
-                                  FlatButton(
-                                    onPressed: () => print("ubah"), 
-                                    padding: EdgeInsets.symmetric(horizontal: 4),
-                                    color: Color(0xFFAFD9BA),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),                                       
-                                    ),     
-                                    child: Text(
-                                      "Ubah Profile", 
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w300,
-                                        fontSize: 12.0
-                                      ),
-                                    ),
-                                  ),                                         
-                                ],
-                              )  
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),          
-
-                  Divider(color: Color(0xFFB2C2B9)),
+                children: <Widget>[                                  
 
                   SizedBox(height: 16.0,),
                   
@@ -315,15 +261,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Column(              
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      FlatButton(
-                        onPressed: () => print("Keluar"), 
+                      RaisedButton(
+                        onPressed: (){
+                          context.read<AuthenticationService>().signOut();
+                        }, 
                         color: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),  
                           side: BorderSide(color: Color(0xFF389048), width: 1.0)                                      
                         ),     
                         child: Text(
-                          "Keluar", 
+                          "Sign Out", 
                           style: TextStyle(
                             color: Color(0xFF389048),
                             fontWeight: FontWeight.w300,

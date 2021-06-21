@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:layout/constants.dart';
 import '../models/products_model.dart';
 
 import './product_detail_screen.dart';
@@ -54,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text("Selamat Datang, \nKomang Pramayasa",
+                      Text("Hallo, \nSelamat Datang",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 16.0,
@@ -66,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       
                       //Profile photo
                       CircleAvatar(
-                        backgroundImage: AssetImage('../../assets/profile.jpeg'),
+                        backgroundImage: AssetImage(ProfileImage),
                         maxRadius: 25.0,
                       )                      
                     ],

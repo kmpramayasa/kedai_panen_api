@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:layout/models/response_post.dart';
 import 'package:layout/services/api.dart';
@@ -34,7 +35,34 @@ class _OrderScreenState extends State<OrderScreen> {
   
   TextEditingController orderQty = TextEditingController();
   TextEditingController orderAddress = TextEditingController();  
-  TextEditingController orderNotes = TextEditingController();    
+  TextEditingController orderNotes = TextEditingController();         
+
+  _minus() {
+    int currentValue = int.tryParse(orderQty.text) ?? 1;
+
+    if(currentValue <= 1) {
+      Toast.show("Jumlah Pesanan Minimal 1", context);
+    } else {
+      int newQty = currentValue - 1;
+      orderQty.text = newQty.toString();
+      setState(() {});
+    }
+    
+  }
+
+  _plus(){
+    int currentValue = int.tryParse(orderQty.text) ?? 1;
+
+      if(orderQty.text = null){        
+        orderQty.text = 1.toString();
+        setState(() {});
+      } 
+
+      int newQty = currentValue + 1;
+      orderQty.text = newQty.toString();
+      setState(() {});      
+      
+  }
 
   // Get Total Order price
   _totalOrder(){    
@@ -85,7 +113,7 @@ class _OrderScreenState extends State<OrderScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {    
 
     return Scaffold(
      
@@ -213,20 +241,65 @@ class _OrderScreenState extends State<OrderScreen> {
                       key: _formKey,
                       child: Column(
                         children: <Widget>[
-                          TextFormField(
-                            style: TextStyle(fontSize: 16.0),
-                            decoration: InputDecoration(
-                              hintText: 'Jumlah Pesanan',
-                              labelStyle: TextStyle(fontSize: 16.0),
-                              border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
-                            ),
-                            keyboardType: TextInputType.number,
-                            validator: (input) => input.trim().isEmpty 
-                            ? 'Mohon masukkan jumlah pesanan' : null,                          
-                            controller: orderQty,
-                            onSaved: (input) => _qty = int.parse(input),
-                            onChanged: (value){},
+                          Row(                            
+                            children: <Widget>[
+
+                              Container(
+                                height: 50.0,
+                                width: 50.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFF389048),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: FlatButton(
+                                  child: Icon(
+                                    FontAwesomeIcons.minus,
+                                    color: Colors.white,
+                                  ), 
+                                  onPressed: _minus,
+                                ),
+                              ), 
+
+                              SizedBox(width: 16.0,), 
+
+                              Expanded(
+                                child: TextFormField(                                
+                                  style: TextStyle(fontSize: 16.0),
+                                  decoration: InputDecoration(
+                                    hintText: 'Jumlah Pesanan',
+                                    labelStyle: TextStyle(fontSize: 16.0),
+                                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
+                                  ),
+                                  keyboardType: TextInputType.number,                                
+                                  validator: (input) => input.trim().isEmpty 
+                                  ? 'Mohon masukkan jumlah pesanan' : null,                          
+                                  controller: orderQty,
+                                  onSaved: (input) => _qty = int.parse(input),
+                                  onChanged: (value){},                                  
+                                ),
+                              ),
+
+                              SizedBox(width: 16.0,),
+
+                              Container(
+                                height: 50.0,
+                                width: 50.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFF389048),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: FlatButton(
+                                  child: Icon(
+                                    FontAwesomeIcons.plus,
+                                    color: Colors.white,
+                                  ), 
+                                  onPressed: _plus,
+                                ),
+                              ), 
+
+                            ],
                           ),
+                          
                           SizedBox(height: 12.0),
                           TextFormField(
                             style: TextStyle(fontSize: 16.0),
