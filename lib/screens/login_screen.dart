@@ -10,6 +10,9 @@ import 'package:toast/toast.dart';
 
 class LoginScreen extends StatefulWidget {
   // const LoginScreen({ Key? key }) : super(key: key);
+  final Function toogleView;
+
+  LoginScreen({this.toogleView});
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -150,12 +153,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       GestureDetector(
-                        onTap: () => Navigator.push(
-                          context, 
-                          MaterialPageRoute(
-                            builder: (BuildContext context) => SignUpScreen()
-                          ), 
-                        ),                       
+                        onTap: () => widget.toogleView(),                       
                         child: Text(
                           "Daftar Sekarang",
                           style: TextStyle(

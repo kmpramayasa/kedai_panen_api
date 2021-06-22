@@ -1,45 +1,17 @@
 {
   "orders": [
     {
-      "products_name": "Bayam",
-      "weight": "7",
-      "unit": "Kilogram",
-      "image": "bayam.jpg",
-      "category": "Sayur",
-      "price": "90000",
-      "qty": "3",
-      "total": "270000",
-      "address": "Jalan Kebo Iwa Utara III A",
-      "note": "Tidak pakai sambal",
-      "date": "17 05 2021",
-      "id": 3
-    },
-    {
-      "products_name": "Kubis",
-      "weight": "500",
-      "unit": "Gram",
-      "image": "kubis.jpg",
-      "category": "Sayur",
-      "price": "5000",
-      "qty": "3",
-      "total": "15000",
-      "address": "Jalan Suli No. 6",
-      "note": "Tidak Ada",
-      "date": "16 05 2021",
-      "id": 8
-    },
-    {
       "products_name": "Kangkung",
       "weight": "500",
       "unit": "Gram",
       "image": "kangkung.jpg",
       "category": "Sayur",
       "price": "10000",
-      "qty": "15",
-      "total": "150000",
+      "qty": "4",
+      "total": "40000",
       "address": "Perumahan Tegal Sari A2",
       "note": "Tidak pakai saos",
-      "date": "17 05 2021",
+      "date": "22 06 2021",
       "id": 9
     },
     {
@@ -49,12 +21,40 @@
       "image": "jambu-madu.jpg",
       "category": "Buah",
       "price": "23000",
-      "qty": "4",
-      "total": "92000",
+      "qty": "5",
+      "total": "115000",
       "address": "Jalan Kebo Iwa Utara",
-      "note": "",
-      "date": "17 05 2021",
+      "note": "Tolong dibungkus dengan rapi.",
+      "date": "22 06 2021",
       "id": 10
+    },
+    {
+      "products_name": "Bayam",
+      "weight": "5",
+      "unit": "Kilogram",
+      "image": "bayam.jpg",
+      "category": "Sayur",
+      "price": "30000",
+      "qty": "2",
+      "total": "60000",
+      "address": "Denpasar",
+      "note": "",
+      "date": "22 06 2021",
+      "id": 11
+    },
+    {
+      "products_name": "Bayam",
+      "weight": "5",
+      "unit": "Kilogram",
+      "image": "bayam.jpg",
+      "category": "Sayur",
+      "price": "30000",
+      "qty": "3",
+      "total": "90000",
+      "address": "Jalan Kebo Iwa, Denpasar",
+      "note": "",
+      "date": "22 06 2021",
+      "id": 12
     }
   ]
 }

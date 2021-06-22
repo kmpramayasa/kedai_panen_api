@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:layout/constants.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:layout/main.dart';
-import 'package:layout/screens/home_screen.dart';
-import 'package:layout/screens/login_screen.dart';
 import 'package:layout/services/authentication_services.dart';
+import 'package:layout/widget/bottom_navigation_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:toast/toast.dart';
 
 class SignUpScreen extends StatefulWidget {  
+
+  final Function toogleView;
+
+  SignUpScreen({this.toogleView});
 
   @override
   _SignUpScreenState createState() => _SignUpScreenState();
@@ -148,12 +149,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                       GestureDetector(
-                        onTap: () => Navigator.push(
-                          context, 
-                          MaterialPageRoute(
-                            builder: (BuildContext context) => LoginScreen()
-                          ), 
-                        ),                       
+                        onTap: () => widget.toogleView(),                       
                         child: Text(
                           "Login Sekarang",
                           style: TextStyle(

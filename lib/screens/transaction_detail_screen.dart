@@ -58,20 +58,14 @@ class _TransactionDetailScreenState extends State<TransactionDetailScreen> {
     
   }
 
-  _plus(){
-    int currentValue = int.tryParse(orderQty.text) ?? 1;
+  _plus(){    
+    int currentValue = int.tryParse(orderQty.text) ?? 0;      
 
-      if(orderQty.text = null){
-        int newQty = currentValue + 2;
-        orderQty.text = newQty.toString();
-        setState(() {});
-      } else {
-        int newQty = currentValue + 1;
-        orderQty.text = newQty.toString();
-        setState(() {});
-      }
-      
-  }
+    int newQty = currentValue + 1;
+    orderQty.text = newQty.toString();
+    setState(() {});      
+    
+  }  
 
   //Submit order procedure
   _submit() async {    

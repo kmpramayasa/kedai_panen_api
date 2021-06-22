@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:layout/screens/login_screen.dart';
 import 'package:layout/services/authentication_services.dart';
-import './screens/home_screen.dart';
-import './screens/product_screen.dart';
-import './screens/profile_screen.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:layout/widget/authentication_widget.dart';
+import 'package:layout/widget/bottom_navigation_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -40,78 +37,17 @@ class MyApp extends StatelessWidget{
 }
 
 class AuthenticationWrapper extends StatelessWidget {
-
+  
   @override
   Widget build(BuildContext context) {
     final firebaseUser = context.watch<User>();
-    // print(firebaseUser);
-    
+    // print(firebaseUser);      
+
     if(firebaseUser != null){
       print(firebaseUser);
       return BottomNavigation();      
     } else {
-      return LoginScreen();
+      return Authentication();   
     }
-  }
-}
-
-//Class BottomNavigation sebagai routing controller
-class BottomNavigation extends StatefulWidget {
-  @override
-  _BottomNavigationState createState() => _BottomNavigationState();
-}
-
-class _BottomNavigationState extends State<BottomNavigation> {
-
-  //Variabel
-  int _currentIndex = 0; //Sebagai penanda page yang sedang aktif
-
-  //List widget untuk menyimpan data class masing-masing halaman
-  final List <Widget> _page = [
-    HomeScreen(),
-    ProductScreen(),
-    ProfileScreen()
-  ];
-
-  //Method yang dijalankan ketika item navigation ditekan
-  void _navigationTapped(int index){
-    setState(() {
-      _currentIndex = index; //mempassing nilai parameter index ke dalam variabel current index
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: _page[_currentIndex], //memanggil list widget
-
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        selectedItemColor: Color(0xFF389048),
-        selectedFontSize: 12,
-        unselectedFontSize: 12, 
-        iconSize: 16,
-
-        //naigation item        
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.home),
-            label: 'Beranda',            
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.shoppingBasket),
-            label: 'Produk'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.userAlt),
-            label: 'Profil'
-          ),
-        ],
-
-        currentIndex: _currentIndex, //halaman yang sedang aktif
-        onTap: _navigationTapped, //ketika terjadi tap maka akan dijalanan method _navigationTapped
-
-      ),
-    );
-  }
+  }  
 }

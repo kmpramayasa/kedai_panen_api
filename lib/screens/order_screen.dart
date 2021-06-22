@@ -51,17 +51,12 @@ class _OrderScreenState extends State<OrderScreen> {
   }
 
   _plus(){
-    int currentValue = int.tryParse(orderQty.text) ?? 1;
+    int currentValue = int.tryParse(orderQty.text) ?? 0;      
 
-      if(orderQty.text = null){        
-        orderQty.text = 1.toString();
-        setState(() {});
-      } 
-
-      int newQty = currentValue + 1;
-      orderQty.text = newQty.toString();
-      setState(() {});      
-      
+    int newQty = currentValue + 1;
+    orderQty.text = newQty.toString();
+    setState(() {});      
+    
   }
 
   // Get Total Order price
