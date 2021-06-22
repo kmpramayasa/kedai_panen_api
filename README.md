@@ -1,16 +1,17 @@
-# layout
+# Mobile Application Project
 
-A new Flutter project.
+Nama: Komang Pramayasa
 
-## Getting Started
+NIM: 1915091014
 
-This project is a starting point for a Flutter application.
+Kelas: SI 4B
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Kedai Panen
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Kedai Panen merupakan aplikasi marketplace yang menyediakan bahan pangan seperti sayuran, buah-buahan dan bumbu rempah. 
+Aplikasi ini dikembangkan dengan menggunakan layanan JSON-SERVER API dan Google Firebase Authentication. 
+
+- Untuk dapat menjalankan aplikasi ini dimohon untuk menginstall NPM Json-Server pada masing-masing device (Dokumentasi Json-Sever: https://www.npmjs.com/package/json-server)
+
+Terima kasih.
